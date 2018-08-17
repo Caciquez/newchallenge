@@ -15,8 +15,10 @@ defmodule Newchallenge.Institute do
     from p in query,
           join: c in assoc(p, :courses),
           where: c.institute_id == p.id,
+          order_by: [desc: p.general_score],
           select: {p, c}
   end
+
 
   @doc """
   Builds a changeset based on the `struct` and `params`.

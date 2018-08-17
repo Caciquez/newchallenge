@@ -1,8 +1,6 @@
 defmodule Newchallenge.InstituteController do
   use Newchallenge.Web, :controller
 
-  import Ecto.Query
-
   alias Newchallenge.Institute
   alias Newchallenge.Course
   plug(:scrub_params, "course" when action in [:add_course])

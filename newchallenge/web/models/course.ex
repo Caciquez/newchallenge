@@ -1,6 +1,8 @@
 defmodule Newchallenge.Course do
   use Newchallenge.Web, :model
 
+  import Ecto.Query
+
   schema "courses" do
     field(:name, :string)
     field(:general_score, :integer)
@@ -9,6 +11,7 @@ defmodule Newchallenge.Course do
 
     timestamps()
   end
+
 
   @required_fields ~w(name general_score student_score institute_id)
   @optional_fields ~w()

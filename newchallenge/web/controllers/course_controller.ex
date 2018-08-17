@@ -10,8 +10,9 @@ defmodule Newchallenge.CourseController do
   end
 
   def new(conn, _params) do
+    institutes = Repo.all(from p in Institute, select: {p.id, p.name})
     changeset = Course.changeset(%Course{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", institute: institutes , changeset: changeset)
   end
 
   def create(conn, %{"course" => course_params}) do
@@ -55,8 +56,6 @@ defmodule Newchallenge.CourseController do
   def delete(conn, %{"id" => id}) do
     course = Repo.get!(Course, id)
 
-    # Here we use delete! (with a bang) because we expect
-    # it to always work (and if it does not, it will raise).
     Repo.delete!(course)
 
     conn
