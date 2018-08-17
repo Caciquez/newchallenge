@@ -1,0 +1,8 @@
+<h2>New course</h2>
+
+<span><%= link "See List of Inserted Courses", to: course_path(@conn, :index) %></span>
+
+<%= render "form.html", changeset: @changeset,
+                        action: course_path(@conn, :create) %>
+
+<span><%= link "Back", to: institute_path(@conn, :index) %></span>

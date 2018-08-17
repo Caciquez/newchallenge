@@ -1,0 +1,9 @@
+<h1>New Institute</h1>
+
+<span><%= #link "See List of Inserted Institutes", to: institute_path(@conn, :indexInstitute) %></span>
+
+<%= render "form.html", changeset: @changeset,
+                        action: institute_path(@conn, :create) %>
+
+
+<span><%= link "Back to Ranking", to: institute_path(@conn, :index) %></span>

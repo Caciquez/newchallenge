@@ -1,0 +1,14 @@
+<%= form_for @changeset, institute_path(@conn, :create), fn f -> %>
+<div class="form-group">
+    <%= label f, :name, class: "control-label" %>
+    <%= text_input f, :name, class: "form-control" %>
+  </div>
+
+    <div class="form-group">
+    <%= label f, :General_Score, class: "control-label" %>
+    <%= text_input f, :general_score, class: "form-control" %>
+  </div>
+
+
+  <%= submit "Create new institute", class: "btn btn-primary" %>
+<% end %>

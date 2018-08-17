@@ -1,0 +1,23 @@
+<h1><%= @institute.name %></h1>
+<%= form_for @changeset, institute_path(@conn, :update, @institute), 
+    fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong</p>
+    </div>
+  <% end %>
+    <div>
+     <%= label f, :name, class: "control-label" %>
+    <%= text_input f, :name, class: "form-control" %>
+  </div>
+
+    <div class="form-group">
+    <%= label f, :General_Score, class: "control-label" %>
+    <%= text_input f, :general_score, class: "form-control" %>
+  </div>
+
+  <%= submit "Update Institute", class: "btn btn-primary" %>
+<% end %>
+
+<%= link "Back", to: institute_path(@conn, :index) %>
+

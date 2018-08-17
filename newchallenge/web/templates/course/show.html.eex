@@ -1,0 +1,27 @@
+<h2>Show course</h2>
+
+<ul>
+  <li>
+    <strong>Name:</strong>
+    <%= @course.name %>
+  </li>
+
+  <li>
+    <strong>General score:</strong>
+    <%= @course.general_score %>
+  </li>
+
+  <li>
+    <strong>Student score:</strong>
+    <%= @course.student_score %>
+  </li>
+
+  <li>
+    <strong>Institute:</strong>
+    <%= @course.institute_id %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: course_path(@conn, :edit, @course) %></span>
+<span class="pull-right"><%= link "Back to course list", to: course_path(@conn, :index) %></span>

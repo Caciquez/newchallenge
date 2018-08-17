@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-sm-6">
+        <h1>List of Courses</h1>
+    </div>
+    <div class="col-sm-6">
+        <%= link "New Course", to: course_path(@conn,:new)%>
+    </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>General score</th>
+      <th>Student score</th>
+      <th>Institute</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for course <- @courses do %>
+    <tr>
+      <td><%= course.name %></td>
+      <td><%= course.general_score %></td>
+      <td><%= course.student_score %></td>
+      <td><%= course.institute_id %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: course_path(@conn, :show, course), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: course_path(@conn, :edit, course), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: course_path(@conn, :delete, course), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "Back", to: institute_path(@conn, :index) %></span>
