@@ -5,11 +5,6 @@ defmodule Newchallenge.InstituteController do
   alias Newchallenge.Course
   plug(:scrub_params, "course" when action in [:add_course])
 
-  def indexInstitute(conn, _params) do
-    institutes = Repo.all(Institute)
-    render(conn, "index_institutes.html", institutes: institutes)
-  end
-
   def index(conn, _params) do
     ranking =
       Institute
@@ -61,8 +56,10 @@ defmodule Newchallenge.InstituteController do
   end
 
   def delete(conn, %{"id" => id}) do
-    institute = Repo.get!(Institute, id)
-    Repo.delete!(institute)
+    Repo.get!(Institute, id)
+    |> Ecto.Changeset.change
+    |> Ecto.Changeset.no_assoc_constraint(:courses)
+    |> Repo.delete
 
     conn
     |> put_flash(:info, "Institute has been deleted sucessfuly.")

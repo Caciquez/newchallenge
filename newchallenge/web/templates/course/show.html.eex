@@ -17,7 +17,7 @@
   </li>
 
   <li>
-    <strong>Institute:</strong>
+    <strong>Institute ID:</strong>
     <%= @course.institute_id %>
   </li>
 

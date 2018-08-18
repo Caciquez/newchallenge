@@ -5,4 +5,4 @@
 <%= render "form.html", changeset: @changeset,
                         action: course_path(@conn, :create) %>
 
-<span><%= link "Back", to: institute_path(@conn, :index) %></span>
+<span><%= link "Back to Ranking", to: institute_path(@conn, :index) %></span>

@@ -29,10 +29,6 @@
     <%= error_tag f, :institute_id %>
   </div>
 
-  <div>
-    <%=#select f, :institute_id, @institute, class: "form-control" %>
-  </div>
-
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>

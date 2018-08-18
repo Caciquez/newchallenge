@@ -11,7 +11,8 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Nome</th>
+            <th>Institute ID</th>
+            <th>Name</th>
             <th>Institute Score</th>
             <th>Course</th>
             <th>Course Score</th>
@@ -21,6 +22,7 @@
     
 <%= for { institute, course } <- @ranking do %>
     <tr>
+      <td><%= institute.id %><td>
       <td><%= institute.name %></td>
       <td><%= institute.general_score %></td>
       <td><%= course.name%></td>

@@ -6,7 +6,7 @@ defmodule Newchallenge.Institute do
     field :name, :string
     field :general_score, :integer
 
-    has_many :courses, Newchallenge.Course # new line
+    has_many :courses, Newchallenge.Course, on_delete: :delete_all
     timestamps()
   end
 
@@ -28,4 +28,5 @@ defmodule Newchallenge.Institute do
     |> cast(params, [:name, :general_score])
     |> validate_required([:name, :general_score])
   end
+
 end

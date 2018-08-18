@@ -12,7 +12,7 @@
     <tr>
       <th>Name</th>
       <th>General score</th>
-      <th>Actions</th>
+      <th class="text-right">Actions</th>
     </tr>
   </thead>
   <tbody>
