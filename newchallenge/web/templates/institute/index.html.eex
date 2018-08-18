@@ -12,6 +12,7 @@
     <thead>
         <tr>
             <th>Institute ID</th>
+            <th></th>
             <th>Name</th>
             <th>Institute Score</th>
             <th>Course</th>
@@ -29,7 +30,6 @@
       <td><%= course.general_score%></td>
       <td><%= course.student_score%></td>
     </tr>
-  
 <% end %>
   </tbody>
 </table>

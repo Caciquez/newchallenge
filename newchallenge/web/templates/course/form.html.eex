@@ -24,7 +24,7 @@
   </div>
 
   <div class="form-group">
-    <%= label f, :institute_id, class: "control-label" %>
+    <%= label f, :Institute_ID, class: "control-label" %>
     <%= number_input f, :institute_id, class: "form-control" %>
     <%= error_tag f, :institute_id %>
   </div>

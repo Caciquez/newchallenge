@@ -10,7 +10,6 @@ defmodule Newchallenge.InstituteController do
       Institute
       |> Institute.show_all()
       |> Repo.all()
-
     render(conn, "index.html", ranking: ranking)
   end
 

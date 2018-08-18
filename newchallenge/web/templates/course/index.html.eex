@@ -35,4 +35,4 @@
   </tbody>
 </table>
 
-<span><%= link "Back", to: institute_path(@conn, :index) %></span>
+<span><%= link "Back to ranking", to: institute_path(@conn, :index) %></span>
